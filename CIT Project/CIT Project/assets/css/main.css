@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
+@import url("font-awesome.min.css");
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+/*
+
+*/
+
+:root {
+	/* Base font size // BG 10/25/2019 */
+	font-size: 10px;
+
+	/* Heading height variable. Should work now // BG 10/30/2019 */
+	--heading-height: 30em;
+}
+
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Scroll works with angled header.
+DON'T CHANGE WITHOUT EDITING THE HEADER // BG 10/15/2019 */
+
+body {
+  display: table;
+  width: 100%;
+  height: 100%;
+  background-color: #171717;
+  color: #000;
+  line-height: 1.6;
+  position: relative;
+  font-family: sans-serif;
+  overflow: scroll;
+  font-family: "Roboto", Arial, sans-serif;
+  min-height: 100vh;
+
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	height: var(--heading-height);
+}
+
+/* Angled header, should work on mobile but who knows // BG 10/31/2019 */
+
+header::before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 6em;
+	width: 100%;
+	height: calc(var(--heading-height) + 10em);
+	z-index: -1;
+	transform: skewY(-3.5deg);
+	background:
+		linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+		url(https://unsplash.com/photos/9BJRGlqoIUk) no-repeat center,
+		linear-gradient(#4e4376, #2b5876);
+	background-size: cover;
+	border-bottom: .2em solid #fff;
+}
+
+/* REM - see :root to change font sizes // BG 10/15/2019 */
+h1 {
+	font-size: calc(2.8em + 2vw);
+	font-weight: 700;
+	letter-spacing: .01em;
+	padding: 5rem 0 0 4.5rem;
+	text-shadow: .022em .022em .022em #111;
+	color: #fff;
+}
+
+/* padding calculated to work with mobile, VW = viewport width
+this shouldn't be changedunless something is wrong with display
+// BG 10/22/2019 */
+
+main {
+	padding: calc(var(--heading-height) + 1.5vw) 4em 0;
+}
+
+p {
+	font-size: calc(2em + .25vw);
+	font-weight: 400;
+	line-height: 2;
+	margin-bottom: 1.5em;
+	color: #fcfcfc;
+}
+
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+}
+.lines .line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* Speed of lines, webkit-animation is working now, should scale correctly to
+mobile without trouble  // BG 10/31/2019 */
+
+.lines .line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0.3) 0%, #e06639 55%, #a9bcbe 100%);
+  -webkit-animation: run 5s 0s infinite;
+          animation: run 8s 0s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+          animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+/* Control for the delay in timing of the downward lines // BG 10/17/2019 */
+.lines .line:nth-child(1) {
+  margin-left: -25%;
+}
+.lines .line:nth-child(1)::after {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.lines .line:nth-child(3) {
+  margin-left: 25%;
+}
+.lines .line:nth-child(3)::after {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+
+}
+
+@-webkit-keyframes run {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+@keyframes run {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}
