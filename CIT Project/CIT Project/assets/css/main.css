@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
 @import url("font-awesome.min.css");
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url('https://fonts.googleapis.com/css?family=Courgette');
 /*
 
 */
@@ -60,21 +61,46 @@ header::before {
 	z-index: -1;
 	transform: skewY(-3.5deg);
 	background:
-		linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-		url(https://unsplash.com/photos/9BJRGlqoIUk) no-repeat center,
+		linear-gradient(rgba(0,0,0,.3), rgba(0,0,255,0)),
+		url(https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/source.gif) repeat,
 		linear-gradient(#4e4376, #2b5876);
 	background-size: cover;
 	border-bottom: .2em solid #fff;
 }
 
+
+
 /* REM - see :root to change font sizes // BG 10/15/2019 */
 h1 {
 	font-size: calc(2.8em + 2vw);
+	font-weight: 300;
+	letter-spacing: .01em;
+	padding: 0rem 0 0 4.5rem;
+	text-shadow: .022em .022em .022em #fcfcfc;
+	color: #fff;
+}
+
+/* H2 is the main header text, got too far and didn't want to change
+all the H1s back // BG 11/2/2019 */
+
+h2 {
+	font-size: calc(5em + 2vw);
 	font-weight: 700;
 	letter-spacing: .01em;
+	padding: 0rem 0 0 4.5rem;
+	text-shadow: .030em .030em .030em #fcfcfc;
+	color: #00008B;
+	font-style: italic;
+	text-align: justify;
+}
+
+a {
+	font-size: calc(1em + .5vw);
+	letter-spacing: .01em;
 	padding: 5rem 0 0 4.5rem;
-	text-shadow: .022em .022em .022em #111;
-	color: #fff;
+	text-shadow: .030em .030em .030em #fcfcfc;
+	color: #a9b4c4;
+
 }
 
 /* padding calculated to work with mobile, VW = viewport width
@@ -83,7 +109,9 @@ this shouldn't be changedunless something is wrong with display
 
 main {
 	padding: calc(var(--heading-height) + 1.5vw) 4em 0;
+	margin-top: 30px;
 }
+
 
 p {
 	font-size: calc(2em + .25vw);
@@ -91,78 +119,64 @@ p {
 	line-height: 2;
 	margin-bottom: 1.5em;
 	color: #fcfcfc;
+	padding: 0 0rem 0rem 4.5rem;
+
 }
 
-.lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
+/* container //BG 11/2/2019 */
+.gif {
+  max-width: 1000px;
+  position: relative;
   margin: auto;
-  width: 90vw;
+	border-radius: 25% 10%;
+	z-index: -1;
 }
-.lines .line {
-  position: absolute;
-  width: 1px;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  background: rgba(255, 255, 255, 0.1);
+
+.navbar {
   overflow: hidden;
+  background-color: rgba(50, 115, 220, 0);
+  position: fixed;
+	overflow: hidden;
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+	text-align: center;
+	padding: inherit;
+	display: inline-block;
 }
 
-/* Speed of lines, webkit-animation is working now, should scale correctly to
-mobile without trouble  // BG 10/31/2019 */
-
-.lines .line::after {
-  content: "";
+.navbar a {
+  float: left;
   display: block;
-  position: absolute;
-  height: 15vh;
-  width: 100%;
-  top: -50%;
-  left: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 255, 0.3) 0%, #e06639 55%, #a9bcbe 100%);
-  -webkit-animation: run 5s 0s infinite;
-          animation: run 8s 0s infinite;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-          animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-/* Control for the delay in timing of the downward lines // BG 10/17/2019 */
-.lines .line:nth-child(1) {
-  margin-left: -25%;
-}
-.lines .line:nth-child(1)::after {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-}
-.lines .line:nth-child(3) {
-  margin-left: 25%;
-}
-.lines .line:nth-child(3)::after {
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
-
+.navbar a:hover {
+  background: #ddd;
+  color: black;
 }
 
-@-webkit-keyframes run {
-  0% {
-    top: -50%;
-  }
-  100% {
-    top: 110%;
-  }
-}
 
-@keyframes run {
-  0% {
-    top: -50%;
-  }
-  100% {
-    top: 110%;
-  }
+/* Took angle off of footer, text and links didn't fit as originally planned
+// BG 11/2/2019 */
+
+footer {
+width: 100%;
+height: var(--heading-height);
+content: "";
+display: block;
+position: relative;
+left: 0;
+bottom: 0em;
+width: 100%;
+z-index: -1;
+background:
+linear-gradient(rgba(0,0,0,.3), rgba(0,0,255,0)),
+url(https://media.giphy.com/media/l3q2Cy90VMhfoA9BC/source.gif),
+linear-gradient(#4e4376, #2b5876);
+background-size: cover;
+border-bottom: .2em solid #fff
 }
