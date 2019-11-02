@@ -70,20 +70,23 @@ header::before {
 /* REM - see :root to change font sizes // BG 10/15/2019 */
 h1 {
 	font-size: calc(2.8em + 2vw);
-	font-weight: 700;
+	font-weight: 300;
 	letter-spacing: .01em;
 	padding: 5rem 0 0 4.5rem;
 	text-shadow: .022em .022em .022em #fcfcfc;
 	color: #fff;
 }
 
+/* H2 is the main header text, got too far and didn't want to change
+all the H1s back // BG 11/2/2019 */
+
 h2 {
-	font-size: calc(2.8em + 2vw);
+	font-size: calc(3.2em + 2vw);
 	font-weight: 700;
 	letter-spacing: .01em;
 	padding: 5rem 0 0 4.5rem;
-	text-shadow: .022em .022em .022em #fcfcfc;
-	color: #fff;
+	text-shadow: .030em .030em .030em #fcfcfc;
+	color: #a9b4c4;
 }
 
 /* padding calculated to work with mobile, VW = viewport width
@@ -95,13 +98,14 @@ main {
 }
 
 
-
 p {
 	font-size: calc(2em + .25vw);
 	font-weight: 400;
 	line-height: 2;
 	margin-bottom: 1.5em;
 	color: #fcfcfc;
+	padding: 5rem 0 0 4.5rem;
+
 }
 
 
