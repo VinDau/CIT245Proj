@@ -89,6 +89,15 @@ h2 {
 	color: #a9b4c4;
 }
 
+a {
+	font-size: calc(1em + .5vw);
+	letter-spacing: .01em;
+	padding: 5rem 0 0 4.5rem;
+	text-shadow: .030em .030em .030em #fcfcfc;
+	color: #a9b4c4;
+
+}
+
 /* padding calculated to work with mobile, VW = viewport width
 this shouldn't be changedunless something is wrong with display
 // BG 10/22/2019 */
@@ -107,7 +116,6 @@ p {
 	padding: 5rem 0 0 4.5rem;
 
 }
-
 
 /* Took angle off of footer, text and links didn't fit as originally planned
 // BG 11/2/2019 */
