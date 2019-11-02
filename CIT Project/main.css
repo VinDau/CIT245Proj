@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
 @import url("font-awesome.min.css");
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url('https://fonts.googleapis.com/css?family=Courgette');
 /*
 
 */
@@ -60,12 +61,14 @@ header::before {
 	z-index: -1;
 	transform: skewY(-3.5deg);
 	background:
-		linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-		url("Images/mainpic.jpg") no-repeat center,
+		linear-gradient(rgba(0,0,0,.3), rgba(0,0,255,0)),
+		url(https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=1050&q=80),
 		linear-gradient(#4e4376, #2b5876);
 	background-size: cover;
 	border-bottom: .2em solid #fff;
 }
+
+
 
 /* REM - see :root to change font sizes // BG 10/15/2019 */
 h1 {
@@ -86,7 +89,8 @@ h2 {
 	letter-spacing: .01em;
 	padding: 5rem 0 0 4.5rem;
 	text-shadow: .030em .030em .030em #fcfcfc;
-	color: #a9b4c4;
+	color: #00008B;
+	font-style: italic;
 }
 
 a {
@@ -144,6 +148,7 @@ width: 100%;
 z-index: -1;
 background:
 	linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+	url(https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=1050&q=80),
 	linear-gradient(#4e4376, #2b5876);
 background-size: cover;
 border-bottom: .2em solid #fff
