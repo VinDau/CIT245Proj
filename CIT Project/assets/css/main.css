@@ -1,15 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
 @import url("font-awesome.min.css");
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url('https://fonts.googleapis.com/css?family=Courgette');
 /*
 
 */
 
 :root {
-	/* Base font size */
+	/* Base font size // BG 10/25/2019 */
 	font-size: 10px;
 
-	/* Heading height variable*/
+	/* Heading height variable. Should work now // BG 10/30/2019 */
 	--heading-height: 30em;
 }
 
@@ -19,32 +20,33 @@
   box-sizing: border-box !important;
 }
 
-html, body {
+html {
   height: 100%;
 }
+
+/* Scroll works with angled header.
+DON'T CHANGE WITHOUT EDITING THE HEADER // BG 10/15/2019 */
 
 body {
   display: table;
   width: 100%;
   height: 100%;
   background-color: #171717;
-  color: #000;
+
   line-height: 1.6;
   position: relative;
-  font-family: sans-serif;
-  overflow: scroll;
   font-family: "Roboto", Arial, sans-serif;
-  min-height: 100vh;
-  background-color: #101010;
+
 }
 
 header {
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	height: var(--heading-height);
 }
 
-/* Create angled background with 'before' pseudo-element */
+/* Angled header, should work on mobile but who knows // BG 10/31/2019 */
+
 header::before {
 	content: "";
 	display: block;
@@ -56,25 +58,60 @@ header::before {
 	z-index: -1;
 	transform: skewY(-3.5deg);
 	background:
-		linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-		url(https://images.unsplash.com/photo-1495464101292-552d0b52fe41?auto=format&fit=crop&w=1350&q=80) no-repeat center,
+		linear-gradient(rgba(0,0,0,.3), rgba(0,0,255,0)),
+		url(https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/source.gif) repeat,
 		linear-gradient(#4e4376, #2b5876);
 	background-size: cover;
 	border-bottom: .2em solid #fff;
+
 }
 
+
+
+/* REM - see :root to change font sizes // BG 10/15/2019 */
 h1 {
 	font-size: calc(2.8em + 2vw);
+	font-weight: 300;
+	font-style: oblique;
+	font-family: "Roboto";
+	letter-spacing: .01em;
+	padding: 0rem 0 0 4.5rem;
+	text-shadow: .030em .030em .030em #00008B;
+	color: #fcfcfc;;
+}
+
+/* H2 is the main header text, got too far and didn't want to change
+all the H1s back // BG 11/2/2019 */
+
+h2 {
+	font-size: calc(5em + 3vw);
 	font-weight: 700;
 	letter-spacing: .01em;
-	padding: 5rem 0 0 4.5rem;
-	text-shadow: .022em .022em .022em #111;
-	color: #fff;
+	padding: 0rem 0 0 4.5rem;
+	text-shadow: .030em .030em .030em #00008B;
+	color: #fcfcfc;
+	font-style: italic;
+	text-align: justify;
 }
+
+a {
+	font-size: calc(1em + .5vw);
+	letter-spacing: .01em;
+	padding: 5rem 0 0 4.5rem;
+	text-shadow: .030em .030em .030em #fcfcfc;
+	color: #a9b4c4;
+
+}
+
+/* padding calculated to work with mobile, VW = viewport width
+this shouldn't be changedunless something is wrong with display
+// BG 10/22/2019 */
 
 main {
 	padding: calc(var(--heading-height) + 1.5vw) 4em 0;
+	margin-top: 30px;
 }
+
 
 p {
 	font-size: calc(2em + .25vw);
@@ -82,71 +119,95 @@ p {
 	line-height: 2;
 	margin-bottom: 1.5em;
 	color: #fcfcfc;
+	text-shadow: .022em .022em .022em #fcfcfc;
+	padding: 0 0rem 0rem 4.5rem;
 }
 
-.lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
+
+
+/* container //BG 11/2/2019 */
+.gif {
+  max-width: 500px;
+  position: relative;
   margin: auto;
-  width: 90vw;
+	z-index: -1;
+	max-height: inherit;
+	border-radius: 25px;
 }
-.lines .line {
-  position: absolute;
-  width: 1px;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  background: rgba(255, 255, 255, 0.1);
+
+
+.navbar {
   overflow: hidden;
-}
-.lines .line::after {
-  content: "";
-  display: block;
+  background-color: rgba(50, 115, 220, 0);
   position: absolute;
-  height: 15vh;
+
+  top: 0;
   width: 100%;
-  top: -50%;
-  left: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 255, 0.3) 0%, #e06639 55%, #a9bcbe 100%);
-  -webkit-animation: run 4s 0s infinite;
-          animation: run 6s 0s infinite;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-          animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-}
-.lines .line:nth-child(1) {
-  margin-left: -25%;
-}
-.lines .line:nth-child(1)::after {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-}
-.lines .line:nth-child(3) {
-  margin-left: 25%;
-}
-.lines .line:nth-child(3)::after {
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+	text-align: center;
+	padding: inherit;
+	display: inline-block;
 }
 
-@-webkit-keyframes run {
-  0% {
-    top: -50%;
-  }
-  100% {
-    top: 110%;
-  }
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+padding: 0rem 0 0 4.5rem;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-@keyframes run {
-  0% {
-    top: -50%;
-  }
-  100% {
-    top: 110%;
-  }
+.navbar a:hover {
+  color: silver;
+	text-shadow:.030em .1em .1em #A2BAE7;
+
+}
+
+.footerLinks {
+   text-align: center;
+	 float: left;
+}
+.footerLinks ul {
+	padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+.footerLinks li {
+	display: inline-block;
+	align-items: center;
+}
+.footerLinks a {
+	color: #d9d9d9;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.footerLinks li a:hover {
+  color: silver;
+	text-shadow:.030em .1em .1em #A2BAE7;
+}
+
+
+/* Took angle off of footer, text and links didn't fit as originally planned
+// BG 11/2/2019 */
+
+
+.footer {
+
+width: 100%;
+height: var(--heading-height);
+content: "";
+display: block;
+position: flex;
+left: 0;
+bottom: 0em;
+width: 100%;
+z-index: -1;
+background:
+linear-gradient(rgba(0,0,0,.3), rgba(0,0,255,0)),
+url(https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/source.gif) repeat,
+linear-gradient(#4e4376, #2b5876);
+background-size: cover;
+border-bottom: .2em solid #fff
 }
