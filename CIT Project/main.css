@@ -124,18 +124,6 @@ p {
 
 
 
-
-/* container //BG 11/2/2019 */
-.gif {
-  max-width: 500px;
-  position: relative;
-  margin: auto;
-	z-index: -1;
-	max-height: inherit;
-	border-radius: 25px;
-}
-
-
 .navbar {
   overflow: hidden;
   background-color: rgba(50, 115, 220, 0);
