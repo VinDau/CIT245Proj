@@ -97,7 +97,6 @@ h2 {
 a {
 	font-size: calc(1em + .5vw);
 	letter-spacing: .01em;
-	padding: 5rem 0 0 4.5rem;
 	text-shadow: .030em .030em .030em #fcfcfc;
 	color: #a9b4c4;
 
@@ -165,16 +164,17 @@ padding: 0rem 0 0 4.5rem;
 }
 
 .footerLinks {
-   text-align: center;
+   text-align: left;
 	 float: right;
+	 padding-top: 18px;
+ 	padding-right: 60px;
+	padding-top: 18px;
+	padding-right: 60px;
 }
-.footerLinks ul {
-	padding-right: 35px;
-    margin: 0;
-}
+
 .footerLinks li {
 	display: block;
-	align-items: center;
+	text-align: left;
 }
 .footerLinks a {
 	color: #d9d9d9;
