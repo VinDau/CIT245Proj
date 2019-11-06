@@ -94,12 +94,22 @@ h2 {
 	text-align: justify;
 }
 
+h3 {
+	font-size: calc(5em);
+	font-weight: 700;
+	letter-spacing: .01em;
+	padding: 0rem 0 0 4.5rem;
+	text-shadow: .030em .030em .030em #00008B;
+	color: #fcfcfc;
+	font-style: italic;
+	text-align: center;
+}
+
 a {
 	font-size: calc(1em + .5vw);
 	letter-spacing: .01em;
 	text-shadow: .030em .030em .030em #fcfcfc;
 	color: #a9b4c4;
-
 }
 
 /* padding calculated to work with mobile, VW = viewport width
@@ -123,23 +133,27 @@ p {
 }
 
 
-
-/* container //BG 11/2/2019 */
-.gif {
-  max-width: 500px;
-  position: relative;
-  margin: auto;
-	z-index: -1;
-	max-height: inherit;
-	border-radius: 25px;
+/* Thank you for contacting us page link //BG 11/6/2019*/
+.navbarthanks a {
+  float: center;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+	padding: 0rem 0 0 4.5rem;
+  text-decoration: none;
+  font-size: 17px;
 }
 
+.navbarthanks a:hover {
+  color: silver;
+	text-shadow:.030em .1em .1em #A2BAE7;
+
+}
 
 .navbar {
   overflow: hidden;
   background-color: rgba(50, 115, 220, 0);
   position: absolute;
-
   top: 0;
   width: 100%;
 	text-align: center;
@@ -152,7 +166,7 @@ p {
   display: block;
   color: #f2f2f2;
   text-align: center;
-padding: 0rem 0 0 4.5rem;
+	padding: 0rem 0 0 4.5rem;
   text-decoration: none;
   font-size: 17px;
 }
