@@ -32,11 +32,9 @@ body {
   width: 100%;
   height: 100%;
   background-color: #171717;
-
   line-height: 1.6;
   position: relative;
   font-family: "Roboto", Arial, sans-serif;
-
 }
 
 header {
@@ -158,8 +156,11 @@ p {
 .navbarthanks a:hover {
   color: silver;
 	text-shadow:.030em .1em .1em #A2BAE7;
-
 }
+
+
+
+/* Navbar should work now // BG 11/9/2019 */
 
 .navbar {
   overflow: hidden;
@@ -191,8 +192,8 @@ p {
 .footerLinks {
    text-align: left;
 	 float: right;
-	padding-top: 18px;
-	padding-right: 60px;
+
+	padding-right: 100px;
 	padding-left: 0px;
 }
 
