@@ -112,6 +112,15 @@ h4 {
 	font-style: italic;
 }
 
+h5 {
+	font-size: small;
+
+	letter-spacing: .01em;
+	text-shadow: .030em .030em .030em #00008B;
+	color: #fcfcfc;
+	font-style: italic;
+	text-align: center;
+}
 
 
 a {
