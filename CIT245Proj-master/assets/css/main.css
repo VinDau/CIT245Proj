@@ -236,6 +236,7 @@ display: block;
 .footerContactForm {
 	border-radius: 5px;
 	padding: 18px;
+	display: none;
 }
 
 .nameBox {
@@ -275,6 +276,13 @@ display: block;
 	color: white;
 	vertical-align: top;
 	font-size: 13px;
+}
+
+	/*Javascript button CSS*/
+.contactButton {
+	width: 35%;
+	height: 50px;
+	margin: auto;
 }
 
 
